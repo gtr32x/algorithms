@@ -4,7 +4,7 @@
 void test_kmp() {
 	p("Algorithm KMP: ");
 	p("-----------------------");
-	int res = KMP("I am a stringg", "AAABAAA");
+	vector<int> res = KMP("AAAABAAAA", "AAAA");
 	print("Result: ");
 	p(res);
 }
