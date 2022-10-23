@@ -12,4 +12,4 @@ CC = g++
 # Perform action on all object files (May or may not exist)
 all: $(OBJECTS)                                                       
 	$(CC) $(CFLAGS) -o $(EXEC) $(OBJECTS)
-	rm $(OBJECTS)
+	rm *.o
