@@ -1,8 +1,14 @@
 #include "util.h"
 #include "kmp.cpp"
 
-void test() {
-	int res = kmp("I am a string");
+void test_kmp() {
+	p("Algorithm KMP: ");
+	p("-----------------------");
+	int res = KMP("I am a stringg", "AAABAAA");
+	print("Result: ");
 	p(res);
-	p("ala");
+}
+
+void test() {
+	test_kmp();
 }
