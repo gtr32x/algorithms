@@ -1,4 +1,4 @@
-#include "util.h"
+#include "../lib/util.h"
 
 vector<int> constructLPS(string pat) {
 	// Initialize lps as an array of size str, this array will hold the search skip information
