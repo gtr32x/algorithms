@@ -1,6 +1,6 @@
 #include "../lib/util.h"
 
-vector<int> constructLPS(string pat) {
+vector<int> construct_lps(string pat) {
 	// Initialize lps as an array of size str, this array will hold the search skip information
 	vector<int> lps(pat.size());
 
@@ -31,7 +31,7 @@ vector<int> constructLPS(string pat) {
 }
 
 vector<int> KMP(string str, string pat) {
-	vector<int> lps = constructLPS(pat);
+	vector<int> lps = construct_lps(pat);
 	vector<int> found;
 
 	// i is used to step forward in the str array

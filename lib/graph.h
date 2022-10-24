@@ -12,11 +12,11 @@ public:
 		tag = inputTag;
 	}
 
-	void addNeighbor(Node* node) {
+	void add_neighbor(Node* node) {
 		neighbors.push_back(node);
 	}
 
-	vector<string> getNeighborTags() {
+	vector<string> get_neighbor_tags() {
 		vector<string> res;
 
 		for (const auto& node: neighbors) {
@@ -26,7 +26,7 @@ public:
 		return res;
 	}
 
-	void printNeighbors() {
+	void print_neighbors() {
 		cout << "[";
 		bool isFirst = true;
 		for (const auto& n: neighbors) {
@@ -39,7 +39,7 @@ public:
 
 	void print() {
 		cout << tag << ": ";
-		printNeighbors();
+		print_neighbors();
 		cout << endl;
 	}
 };

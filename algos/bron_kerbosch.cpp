@@ -19,8 +19,8 @@ vector<vector<string>> bron_kerbosch(vector<vector<int>> graph) {
 			nodes[v2] = new Node(v2);
 		}
 
-		nodes[v1]->addNeighbor(nodes[v2]);
-		nodes[v2]->addNeighbor(nodes[v1]);
+		nodes[v1]->add_neighbor(nodes[v2]);
+		nodes[v2]->add_neighbor(nodes[v1]);
 	}
 
 	// Initialize the vector of vertices to search through as all vertices in the graph
@@ -45,17 +45,17 @@ void bron_kerbosch_inner(vector<string> R, vector<string> P, vector<string> X, v
 
 	// Selecting a pivot can help reduce the number of vertices to loop through, the heuristic for pivot here is such that
 	// only the pivot and its non-neighbors needed to be tested each time
-	auto list = algo::vec::vec_substract(P, nodes[P[0]]->getNeighborTags());
+	auto list = algo::vec::vec_substract(P, nodes[P[0]]->get_neighbor_tags());
 
 	for (const auto& v: list) {
 		// Consider R to be the temporary clique that's currently being constructed
 		auto RUV = algo::vec::vec_union(R, {v});
 
 		// Consider P to the the remaining set of vertices that's still possible to be within our current maximal clique
-		auto PIN = algo::vec::vec_intersect(P, nodes[v]->getNeighborTags());
+		auto PIN = algo::vec::vec_intersect(P, nodes[v]->get_neighbor_tags());
 
 		// Consider X to be the vertices that have been visited, thus any clique built using it would have already been found, this acts as an exclusion list
-		auto XIN = algo::vec::vec_intersect(X, nodes[v]->getNeighborTags());
+		auto XIN = algo::vec::vec_intersect(X, nodes[v]->get_neighbor_tags());
 
 		bron_kerbosch_inner(RUV, PIN, XIN, ans, nodes);
 
